@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'favicon.ico' %}" type="image/png/ico" rel="shortcut icon" />
+    <title>Home page</title>
+</head>
+<body>
+    <h1> dataset MNIST </h1>
+    <h2>
+        {{ dbn }}
+    </h2>
+    <p><b>compute the predictions for the test data and show a classification report</b></p>
+    <p>preds
+    {{ preds }}</p>
+
+    <div><b>show classification </b>
+    {{ showclassifications|linebreaks }}
+
+    </div>
+    <hr/>
+
+
+
+
+</body>
+</html>
