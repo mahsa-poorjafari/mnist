@@ -28,12 +28,12 @@ def index(request):
         learn_rate_decays=0.9,
         epochs=10,
         verbose=1)
-    # dbn.fit(trainX, trainY)
-    # preds = dbn.predict(testX)
-    # showclassifications = classification_report(testY, preds)
+    dbn.fit(trainX, trainY)
+    preds = dbn.predict(testX)
+    showclassifications = classification_report(testY, preds)
     testlenght = np.random.choice(np.arange(0, len(testY)), size=(10,))
-    # return render(request, 'index.html', {'dbn': dbn, 'preds': preds, 'showclassifications': showclassifications, 'testlenght': testlenght})
-    return render(request, 'index.html', {'dbn': dbn, 'testlenght': testlenght})
+    return render(request, 'index.html', {'dbn': dbn, 'preds': preds, 'showclassifications': showclassifications})
+    # return render(request, 'index.html', {'dbn': dbn, 'testlenght': testlenght})
 
 
     # return HttpResponse(dataset.data / 255.0)
